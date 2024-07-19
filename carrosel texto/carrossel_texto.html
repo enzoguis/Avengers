@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=div, initial-scale=1.0" />
+    <title>Carrossel com Texto</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
+    <style>
+      img {
+        width: 150px;
+        height: 150px;
+        border-radius: 75px;
+        display: flex;
+        border: solid;
+        border-color: white;
+      }
+      .container {
+        display: flex;
+        margin-left: 15%;
+        margin-right: 15%;
+        padding: 40px;
+        gap: 20px;
+        background-color: gainsboro;
+        border-radius: 10px;
+      }
+      .nome {
+        display: flex;
+        font-family: 'Poppins', sans-serif;
+        font-size: 12px;
+      }
+      .direita {
+        position: absolute;
+        top: 15%;
+        right: 16%;
+      }
+      .esquerda {
+        position: absolute;
+        top: 15%;
+        left: 16%;
+      }
+      .texto {
+        font-family: 'Poppins', sans-serif;
+        font-size: 18px;
+        color: black;
+        font-weight: 300;
+      }
+      button {
+        border: none;
+        background-color: transparent;
+      }
+      button:hover {
+        scale: 1.1;
+        background-color: transparent;
+      }
+      .alinhamento {
+        gap: 20px;
+        display: flex;
+      }
+    </style>
+    <script>
+      const imagens = [
+        'https://sudotec.org.br/upload/aprendercrescerdepoimentos/dest_4.jpg',
+        'https://sudotec.org.br/upload/aprendercrescerdepoimentos/dest_7.jpg',
+        'https://sudotec.org.br/upload/aprendercrescerdepoimentos/dest_1.jpg',
+        'https://sudotec.org.br/upload/aprendercrescerdepoimentos/dest_8.jpg',
+        'https://sudotec.org.br/upload/aprendercrescerdepoimentos/dest_6.jpg',
+        'https://sudotec.org.br/upload/aprendercrescerdepoimentos/dest_2.jpg',
+        'https://sudotec.org.br/upload/aprendercrescerdepoimentos/dest_5.jpg',
+      ]
+      const texto = [
+        `“Vim de outra cidade para cursar Engenharia de Software na UTFPR e em
+                paralelo iniciei o curso Aprender e Crescer da Sudotec, como uma forma
+                de aprimorar meus conhecimentos. Lá tive uma experiência fantástica
+                onde consegui aprender coisas novas, trocar conhecimento com meus
+                colegas e conhecer pessoas que confiaram no meu trabalho.”`,
+        ` "O projeto Aprender e Crescer foi um dos marcos do meu início de carreira na área de tecnologia e programação, caí de para-quedas, com o envio da inscrição de um amigo.
+      Trabalhava no RH de uma empresa na qual pedi transferência para o setor do T.I, que era o local mais próximo da empresa com programação, 
+      um mês após o início do curso..."`,
+        ` “O projeto  Aprender e Crescer me deu muitas oportunidades, desde 2016 quando participei pela primeira vez do projeto me 
+        encantei com o curso, motivo pelo qual me levou a faze-lo novamente em 2017, um curso excelente , com ótimos professores, dedicados e 
+        capacitados...`,
+        `O Projeto Aprender & Crescer foi o que viabilizou a mudança em minha vida,
+         vinha trabalhando a 5 anos no mercado de trabalho em um ramo onde não me identificava, e meu sonho sempre
+          foi atuar na área de tecnologia, foi quando descobr...`,
+        `“O curso aprender & crescer foi uma das coisas mais importantes que aconteceu comigo em 2019, se não a mais importante, pois..`,
+        ` “O projeto Aprender e Crescer foi o ponto de 'start' na minha vida na área de tecnologia, após passar pelo proces...`,
+        ` “O curso Aprender e Crescer foi uma experiência incrível, pois além de todo o aprendizado adquirido, na área...`,
+      ]
+
+      const nome = [
+        '-GABRIELA FARIAS - AC - 2016',
+        '- Bernardo Bortot Spiazzi - AC 2021',
+        '-CRISTIANE BORDIGNON MONTEIRO - AC 2016 e 2017',
+        '-Carlos Eduardo Bageston - AC 2022',
+        '-GABRIEL NOVOCHADLEY - AC-2019',
+        '-ALISSON STOPASSOLE -  AC-2015',
+        '-PEDRO LUCAS MEURER - AC - 2019',
+      ]
+
+      let index = 0
+      function voltar() {
+        index--
+
+        if (index < 0) index = imagens.length - 1
+
+        carrossel()
+      }
+      function avancar() {
+        index++
+
+        if (index > imagens.length - 1) index = 0
+
+        carrossel()
+      }
+      function carrossel() {
+        let imgCarrossel = document.getElementById('foto-perfil')
+        let textoPerfil = document.getElementById('texto-perfil')
+        let nomePerfil = document.getElementById('nome-perfil')
+
+        textoPerfil.innerHTML = texto[index]
+        nomePerfil.innerHTML = nome[index]
+        imgCarrossel.src = imagens[index]
+      }
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <button type="button" class="esquerda" onclick="voltar()">
+          <span class="material-symbols-outlined"> chevron_left </span>
+        </button>
+        <button type="button" class="direita" onclick="avancar()">
+          <span class="material-symbols-outlined"> chevron_right </span>
+        </button>
+      </div>
+      <div class="alinhamento">
+        <div>
+          <img
+            id="foto-perfil"
+            src="https://sudotec.org.br/upload/aprendercrescerdepoimentos/dest_4.jpg"
+            alt=""
+          />
+        </div>
+        <div>
+          <p class="texto" id="texto-perfil">
+            “Vim de outra cidade para cursar Engenharia de Software na UTFPR e
+            em paralelo iniciei o curso Aprender e Crescer da Sudotec, como uma
+            forma de aprimorar meus conhecimentos. Lá tive uma experiência
+            fantástica onde consegui aprender coisas novas, trocar conhecimento
+            com meus colegas e conhecer pessoas que confiaram no meu trabalho.”
+          </p>
+          <p class="nome" id="nome-perfil">-GABRIELA FARIAS - AC - 2016</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
