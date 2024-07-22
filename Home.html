@@ -73,8 +73,7 @@
         border-radius: 2px;
         background-color: #2f77ec;
       }
-     
-     
+
       img {
         width: 150px;
         height: 150px;
@@ -126,7 +125,6 @@
         gap: 20px;
         display: flex;
       }
-  
     </style>
   </head>
   <body>
@@ -146,7 +144,7 @@
         <a href="atv3.html">INCLUSÃO DIGITAL</a>
       </div>
       <div class="fundo">
-        <a href="">MAKER SPACE</a>
+        <a href="MAKER.html">MAKER SPACE</a>
       </div>
       <div class="fundo">
         <a href="">APRENDER & CRESCER</a>
@@ -216,7 +214,7 @@
         ` “O projeto Aprender e Crescer foi o ponto de 'start' na minha vida na área de tecnologia, após passar pelo proces...`,
         ` “O curso Aprender e Crescer foi uma experiência incrível, pois além de todo o aprendizado adquirido, na área...`,
       ]
-  
+
       const nome = [
         '-GABRIELA FARIAS - AC - 2016',
         '- Bernardo Bortot Spiazzi - AC 2021',
@@ -226,33 +224,31 @@
         '-ALISSON STOPASSOLE -  AC-2015',
         '-PEDRO LUCAS MEURER - AC - 2019',
       ]
-  
+
       let index = 0
       function voltar() {
         index--
-  
+
         if (index < 0) index = imagens.length - 1
-  
+
         carrossel()
       }
       function avancar() {
         index++
-  
+
         if (index > imagens.length - 1) index = 0
-  
+
         carrossel()
       }
       function carrossel() {
         let imgCarrossel = document.getElementById('foto-perfil')
         let textoPerfil = document.getElementById('texto-perfil')
         let nomePerfil = document.getElementById('nome-perfil')
-  
+
         textoPerfil.innerHTML = texto[index]
         nomePerfil.innerHTML = nome[index]
         imgCarrossel.src = imagens[index]
       }
     </script>
   </body>
-
-  
 </html>
