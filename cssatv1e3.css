@@ -76,13 +76,13 @@ button {
 }
 
 .esquerda {
-    top: 40%;
-    left: 50%;
+    top: 50%;
+    left: 40%;
 }
 
 .direita {
-    top: 40%;
-    right: 22%;
+    top: 50%;
+    right: 25%;
 }
 
 #imagem-carrossel {
