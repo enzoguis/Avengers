@@ -23,17 +23,20 @@
         display: flex;
         margin-left: 10%;
         height: 100px;
+        width: 150px;
+        display: flex;     
       }
       .header {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        background-color: white;
       }
       .numero {
         margin-left: 40%;
         font-family: 'Poppins', sans-serif;
         font-size: 16px;
-        color: rgb(198, 197, 197);
+        color: white;
       }
       .area {
         margin-right: 14%;
@@ -63,13 +66,3 @@
         border-radius: 2px;
         background-color: #2f77ec;
       }
-
-      img {
-        width: 150px;
-        height: 150px;
-        border-radius: 75px;
-        display: flex;
-        border: solid;
-        border-color: white;
-      }
-  
